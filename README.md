@@ -7,7 +7,7 @@
 Also ability to track SSL certificates.
 
 ## Usage
-Extract to folder of your choosing and run:
+Extract to folder of your choosing and run (in elevated command prompt):
 
 ```
 > C:\Windows\Microsoft.NET\Framework64\v4.0.30319\installutil \path\to\AppPoolMonitor.exe
