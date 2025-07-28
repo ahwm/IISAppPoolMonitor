@@ -28,7 +28,7 @@ namespace AppPoolMonitor
             {
                 try
                 {
-                    return Convert.ToInt32(ConfigurationManager.AppSettings["NumFailures"]);
+                    return Convert.ToInt32(ConfigurationManager.AppSettings["NumFailures"] ?? "5");
                 }
                 catch
                 {
@@ -42,7 +42,7 @@ namespace AppPoolMonitor
             {
                 try
                 {
-                    return Convert.ToInt32(ConfigurationManager.AppSettings["NumDays"]);
+                    return Convert.ToInt32(ConfigurationManager.AppSettings["NumDays"] ?? "30");
                 }
                 catch
                 {
@@ -56,7 +56,7 @@ namespace AppPoolMonitor
             {
                 try
                 {
-                    return Convert.ToInt32(ConfigurationManager.AppSettings["CheckInterval"]);
+                    return Convert.ToInt32(ConfigurationManager.AppSettings["CheckInterval"] ?? "2");
                 }
                 catch
                 {
@@ -70,7 +70,7 @@ namespace AppPoolMonitor
             {
                 try
                 {
-                    return Convert.ToInt32(ConfigurationManager.AppSettings["CertCheckInterval"]);
+                    return Convert.ToInt32(ConfigurationManager.AppSettings["CertCheckInterval"] ?? "10");
                 }
                 catch
                 {
@@ -226,7 +226,7 @@ namespace AppPoolMonitor
         {
             try
             {
-                using (ServerManager manager = new ServerManager())
+                using (ServerManager manager = new ServerManager(applicationHostConfigurationPath: @"C:\Windows\System32\inetsrv\config\applicationHost.config"))
                 {
                     ApplicationPoolCollection applicationPoolCollection = manager.ApplicationPools;
 
