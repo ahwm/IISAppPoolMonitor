@@ -226,7 +226,7 @@ namespace AppPoolMonitor
         {
             try
             {
-                using (ServerManager manager = new ServerManager(applicationHostConfigurationPath: @"C:\Windows\System32\inetsrv\config\applicationHost.config"))
+                using (ServerManager manager = new ServerManager())
                 {
                     ApplicationPoolCollection applicationPoolCollection = manager.ApplicationPools;
 
